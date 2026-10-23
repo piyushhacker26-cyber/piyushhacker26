@@ -1,0 +1,373 @@
+
+/* =====================================
+   WEBSITE CONFIGURATION
+   Edit these values only in VS Code
+===================================== */
+
+:root {
+  --page-bg: #101827;
+  --page-image: url("images/my-background.jpg");
+
+  --card-bg: rgba(20, 30, 48, 0.92);
+  --text-color: #f4f7fb;
+  --muted-color: #9eacc0;
+
+  --button-bg: #2878ed;
+  --button-hover: #1d65d1;
+
+  --success: #20b96a;
+  --success-hover: #169654;
+
+  --border-color: rgba(255, 255, 255, 0.11);
+  --card-radius: 18px;
+}
+
+/* =====================================
+   RESET
+===================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+
+  background-color: var(--page-bg);
+  background-image: var(--page-image);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* =====================================
+   MAIN LAYOUT
+===================================== */
+
+.page {
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 28px 16px;
+}
+
+.follow-panel {
+  width: 100%;
+  max-width: 440px;
+}
+
+.social-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* =====================================
+   SOCIAL MEDIA CARD
+===================================== */
+
+.social-card {
+  width: 100%;
+  padding: 19px;
+
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-radius);
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.profile-row {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+}
+
+/* =====================================
+   AUTOMATIC AVATAR
+===================================== */
+
+.avatar {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  color: #ffffff;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.avatar svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.avatar-initials {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* =====================================
+   PROFILE INFORMATION
+===================================== */
+
+.profile-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.platform-name {
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.username {
+  margin-top: 4px;
+  color: var(--muted-color);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+/* =====================================
+   FOLLOW BUTTON
+===================================== */
+
+.follow-button {
+  min-height: 42px;
+  min-width: 86px;
+  padding: 0 15px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 10px;
+
+  color: #ffffff;
+  background: var(--button-bg);
+
+  text-decoration: none;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+
+  transition: background 0.2s ease,
+              transform 0.2s ease;
+}
+
+.follow-button:hover {
+  background: var(--button-hover);
+}
+
+.follow-button:active {
+  transform: scale(0.97);
+}
+
+.follow-button.is-confirmed {
+  background: var(--success);
+}
+
+.follow-button.is-confirmed:hover {
+  background: var(--success-hover);
+}
+
+/* =====================================
+   CHECKBOX
+===================================== */
+
+.confirm-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+
+  margin-top: 19px;
+  padding-top: 15px;
+
+  border-top: 1px solid var(--border-color);
+
+  color: var(--text-color);
+  font-size: 13px;
+  line-height: 1.5;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.confirm-checkbox {
+  width: 19px;
+  height: 19px;
+  flex: 0 0 19px;
+
+  margin: 0;
+  accent-color: var(--success);
+
+  cursor: pointer;
+}
+
+/* =====================================
+   SUBMIT BUTTON
+===================================== */
+
+.submit-button {
+  width: 100%;
+  min-height: 49px;
+
+  margin-top: 18px;
+  padding: 13px 18px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: var(--success);
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: opacity 0.2s ease,
+              background 0.2s ease;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: var(--success-hover);
+}
+
+.submit-button:disabled {
+  background: #596273;
+  color: #d4d9e2;
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* =====================================
+   STATUS MESSAGES
+===================================== */
+
+.status-message {
+  display: none;
+  margin: 14px 0 0;
+  padding: 12px 14px;
+
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.status-message.is-success {
+  display: block;
+  color: #b8f7d0;
+  background: rgba(32, 185, 106, 0.14);
+  border: 1px solid rgba(32, 185, 106, 0.35);
+}
+
+.status-message.is-error {
+  display: block;
+  color: #ffc5c5;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.privacy-note {
+  margin: 15px 5px 0;
+
+  color: var(--muted-color);
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* =====================================
+   KEYBOARD ACCESSIBILITY
+===================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #91c4ff;
+  outline-offset: 3px;
+}
+
+/* =====================================
+   MOBILE RESPONSIVENESS
+===================================== */
+
+@media (max-width: 480px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .page {
+    padding: 20px 13px;
+  }
+
+  .social-card {
+    padding: 16px;
+    border-radius: 15px;
+  }
+
+  .profile-row {
+    gap: 10px;
+  }
+
+  .avatar {
+    width: 51px;
+    height: 51px;
+    flex-basis: 51px;
+  }
+
+  .platform-name {
+    font-size: 15px;
+  }
+
+  .username {
+    font-size: 12px;
+  }
+
+  .follow-button {
+    min-width: 76px;
+    min-height: 42px;
+    padding: 0 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}

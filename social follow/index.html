@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>Social Follow</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <main class="page">
+    <section class="follow-panel" aria-label="Social media follow page">
+
+      <form id="followForm" novalidate>
+
+        <div class="social-list">
+
+          <!-- INSTAGRAM PROFILE -->
+          <article class="social-card" data-required="true">
+
+            <div class="profile-row">
+              <div class="avatar" data-avatar aria-hidden="true">
+                <span class="avatar-initials">IG</span>
+              </div>
+
+              <div class="profile-info">
+                <div class="platform-name">Instagram</div>
+                <div class="username" data-username>
+                  @YOUR_USERNAME
+                </div>
+              </div>
+
+              <a
+                class="follow-button"
+                data-follow-link
+                href="https://www.instagram.com/YOUR_USERNAME/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Follow
+              </a>
+            </div>
+
+            <label class="confirm-label">
+              <input
+                type="checkbox"
+                class="confirm-checkbox"
+                name="instagram_confirmation"
+                required
+              >
+              <span>I have followed this account</span>
+            </label>
+
+          </article>
+
+          <!--
+            ADD MORE SOCIAL MEDIA CARDS HERE LATER.
+            Give each required card:
+            class="social-card" data-required="true"
+            Add its own checkbox with class="confirm-checkbox".
+          -->
+
+        </div>
+
+        <button
+          type="submit"
+          id="submitButton"
+          class="submit-button"
+          disabled
+        >
+          Submit Confirmation
+        </button>
+
+        <p
+          id="statusMessage"
+          class="status-message"
+          role="status"
+          aria-live="polite"
+        ></p>
+
+        <p class="privacy-note">
+          Confirmation is self-reported and does not verify
+          your follow directly with the social media platform.
+        </p>
+
+      </form>
+
+    </section>
+  </main>
+
+</body>
+</html>
